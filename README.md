@@ -20,7 +20,7 @@
 1. Clone this repository locally
 2. Rename the folder to Catppuccin (or whatever you wish)
 3. Move the folder to /usr/share/sddm/themes
-4. Edit the file in /etc/sddm.conf and change the theme in there from whatever was before to Catppuccin (or whatever you named the folder that is in /usr/share/sddm/themes)
+4. Edit the file in /etc/sddm.conf and change the theme in there from whatever was before to Catppuccin (or whatever you named the folder)
 
 ## 💝 Thanks to
 
