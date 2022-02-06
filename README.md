@@ -1,4 +1,4 @@
-# sddm
+# 🔒 SDDM Login Manager
  🔒 Soothing pastel theme for SDDM
 
 <h3 align="center">
@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/DonutDev/sddm/master/showcase.png"/>
+  <img src="https://raw.githubusercontent.com/DonutDev/sddm/master/ultimate.png"/>
 </p>
 
 ## Usage
