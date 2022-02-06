@@ -211,6 +211,7 @@ Rectangle {
                         id: errorMessage
                         anchors.horizontalCenter: parent.horizontalCenter
                         text: textConstants.prompt
+			color: "#C9CBFF"
                         font.pixelSize: 10
                     }
                 }
