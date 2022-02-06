@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/DonutDev/sddm/master/catppuccin.png"/>
+  <img src="https://raw.githubusercontent.com/DonutDev/sddm/master/showcase.png"/>
 </p>
 
 ## Usage
