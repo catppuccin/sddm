@@ -1,6 +1,3 @@
-# 🔒 SDDM Login Manager
- 🔒 Soothing pastel theme for SDDM
-
 <h3 align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/misc/transparent.png" height="30" width="0px"/>
@@ -9,9 +6,9 @@
 </h3>
 
 <p align="center">
-    <a href="https://github.com/DonutDev/sddm/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/template?colorA=1e1e28&colorB=c9cbff&style=for-the-badge&logo=starship"></a>
-    <a href="https://github.com/DonutDev/sddm/issues"><img src="https://img.shields.io/github/issues/catppuccin/template?colorA=1e1e28&colorB=f7be95&style=for-the-badge"></a>
-    <a href="https://github.com/DonutDev/sddm/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/template?colorA=1e1e28&colorB=b1e1a6&style=for-the-badge"></a>
+    <a href="https://github.com/catppuccin/sddm/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/sddm?colorA=1e1e28&colorB=c9cbff&style=for-the-badge&logo=starship"></a>
+    <a href="https://github.com/catppuccin/sddm/issues"><img src="https://img.shields.io/github/issues/catppuccin/sddm?colorA=1e1e28&colorB=f7be95&style=for-the-badge"></a>
+    <a href="https://github.com/catppuccin/sddm/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/sddm?colorA=1e1e28&colorB=b1e1a6&style=for-the-badge"></a>
 </p>
 
 <p align="center">
