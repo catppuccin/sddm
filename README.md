@@ -18,9 +18,9 @@
 ## Usage
 
 1. Clone this repository locally
-2. Go into the src folder then copy the folder catppuccin-flavour
-3. Paste the folder to /usr/share/sddm/themes
-4. Edit the file in /etc/sddm.conf and change the theme in there from whatever was before to catppuccin-flavour
+2. Go into the `src` folder then copy the folder `catppuccin-flavour` (flavour is replaced with latte/frappe/macchiato/mocha)
+3. Paste the folder to `/usr/share/sddm/themes`
+4. Edit the file in /etc/sddm.conf and change the theme in there from whatever was before to `catppuccin-flavour`
 
 ## 💝 Thanks to
 
