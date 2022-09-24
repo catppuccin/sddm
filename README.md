@@ -12,19 +12,20 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/DonutDev/sddm/master/ultimate.png"/>
+  <img src="https://raw.githubusercontent.com/catppuccin/sddm/master/assets/ultimate.png"/>
 </p>
 
 ## Usage
 
 1. Clone this repository locally
-2. Rename the folder to Catppuccin (or whatever you wish)
-3. Move the folder to /usr/share/sddm/themes
-4. Edit the file in /etc/sddm.conf and change the theme in there from whatever was before to Catppuccin (or whatever you named the folder)
+2. Go into the src folder then copy the folder catppuccin-flavour
+3. Paste the folder to /usr/share/sddm/themes
+4. Edit the file in /etc/sddm.conf and change the theme in there from whatever was before to catppuccin-flavour
 
 ## 💝 Thanks to
 
 - [DonutDev](https://github.com/DonutDev)
+- [Isabelinc](https://github.com/Isabelincorp)
 
 &nbsp;
 
