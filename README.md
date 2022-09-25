@@ -12,8 +12,27 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/catppuccin/sddm/master/assets/ultimate.png"/>
+  <img src="assets/preview.webp"/>
 </p>
+
+## Previews
+
+<details>
+<summary>🌻 Latte</summary>
+<img src="assets/latte.png"/>
+</details>
+<details>
+<summary>🪴 Frappé</summary>
+<img src="assets/frappe.png"/>
+</details>
+<details>
+<summary>🌺 Macchiato</summary>
+<img src="assets/macchiato.png"/>
+</details>
+<details>
+<summary>🌿 Mocha</summary>
+<img src="assets/mocha.png"/>
+</details>
 
 ## Usage
 
@@ -21,6 +40,10 @@
 2. Go into the `src` folder then copy the folder `catppuccin-flavour` (flavour is replaced with latte/frappe/macchiato/mocha)
 3. Paste the folder to `/usr/share/sddm/themes`
 4. Edit the file in /etc/sddm.conf and change the theme in there from whatever was before to `catppuccin-flavour`
+
+* If you don't have this file make one and make sure it has these two lines within the config. 
+`[Theme]`
+`Current=catppuccin-flavour`
 
 ## 💝 Thanks to
 

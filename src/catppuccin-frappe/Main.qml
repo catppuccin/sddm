@@ -49,7 +49,7 @@ Rectangle {
             anchors.margins: 10
             anchors.top: parent.top; anchors.right: parent.right
 
-            color: "#cdd6f4"
+            color: "#c6d0f5"
             timeFont.family: "Oxygen"
         }
 
@@ -67,7 +67,7 @@ Rectangle {
                 spacing: 12
                 Text {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    color: "#cdd6f4"
+                    color: "#c6d0f5"
                     verticalAlignment: Text.AlignVCenter
                     height: text.implicitHeight
                     width: parent.width
@@ -87,7 +87,7 @@ Rectangle {
                         text: textConstants.userName
                         font.bold: true
                         font.pixelSize: 12
-			color: "#cdd6f4"
+			color: "#c6d0f5"
 			
                     }
 
@@ -96,8 +96,8 @@ Rectangle {
                         width: parent.width; height: 30
                         text: userModel.lastUser
                         font.pixelSize: 14
-		 	color: "#cdd6f4"
-			hoverColor: "#cdd6f4"	
+		 	color: "#c6d0f5"
+			hoverColor: "#c6d0f5"	
 
                         KeyNavigation.backtab: rebootButton; KeyNavigation.tab: password
 
@@ -118,7 +118,7 @@ Rectangle {
                         width: parent.width
                         text: textConstants.password
                         font.bold: true
-			color: "#cdd6f4"
+			color: "#c6d0f5"
                         font.pixelSize: 12
                     }
 
@@ -126,8 +126,8 @@ Rectangle {
                         id: password
                         width: parent.width; height: 30
                         font.pixelSize: 14
-			color: "#cdd6f4"
-			hoverColor: "#cdd6f4"
+			color: "#c6d0f5"
+			hoverColor: "#c6d0f5"
 			
 
                         KeyNavigation.backtab: name; KeyNavigation.tab: session
@@ -159,16 +159,16 @@ Rectangle {
                             wrapMode: TextEdit.WordWrap
                             font.bold: true
                             font.pixelSize: 12
-			    color: "#cdd6f4"
+			    color: "#c6d0f5"
                         }
 
                         ComboBox {
                             id: session
                             width: parent.width; height: 22
                             font.pixelSize: 12
-			                color: "#cdd6f4"	    
+			                color: "#c6d0f5"	    
                             arrowIcon: "angle-down.png"
-			                hoverColor: "#cdd6f4"
+			                hoverColor: "#c6d0f5"
                             model: sessionModel
                             index: sessionModel.lastIndex
 
@@ -189,16 +189,16 @@ Rectangle {
                             wrapMode: TextEdit.WordWrap
                             font.bold: true
                             font.pixelSize: 12
-			    color: "#cdd6f4"
+			    color: "#c6d0f5"
                         }
 
                         LayoutBox {
                          id: layoutBox
                          width: parent.width; height: 22
                          font.pixelSize: 12
-			             color: "#cdd6f4"	    
+			             color: "#c6d0f5"	    
                          arrowIcon: "angle-down.png"
-			             hoverColor: "#cdd6f4"
+			             hoverColor: "#c6d0f5"
 			                      
                           KeyNavigation.backtab: session; KeyNavigation.tab: loginButton
                         }
@@ -211,7 +211,7 @@ Rectangle {
                         id: errorMessage
                         anchors.horizontalCenter: parent.horizontalCenter
                         text: textConstants.prompt
-			color: "#cdd6f4"
+			color: "#c6d0f5"
                         font.pixelSize: 10
                     }
                 }
@@ -226,7 +226,7 @@ Rectangle {
                         id: loginButton
                         text: textConstants.login
                         width: parent.btnWidth
-			color: "#1E1E2E"
+			color: "#303446"
 
                         onClicked: sddm.login(name.text, password.text, sessionIndex)
 
@@ -237,7 +237,7 @@ Rectangle {
                         id: shutdownButton
                         text: textConstants.shutdown
                         width: parent.btnWidth
-			color: "#1E1E2E"
+			color: "#303446"
 
                         onClicked: sddm.powerOff()
 
@@ -248,7 +248,7 @@ Rectangle {
                         id: rebootButton
                         text: textConstants.reboot
                         width: parent.btnWidth
-			color: "#1E1E2E"
+			color: "#303446"
 
                         onClicked: sddm.reboot()
 
