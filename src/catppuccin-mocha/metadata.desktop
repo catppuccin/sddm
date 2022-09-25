@@ -1,0 +1,12 @@
+[SddmGreeterTheme]
+Name=Catppuccin Mocha
+Description=Soothing pastel theme for SDDM
+Type=sddm-theme
+Version=2.0
+Website=https://github.com/catppuccin/sddm
+Screenshot=ultimate.png
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Theme-Id=Catppuccin
+Theme-API=2.0
