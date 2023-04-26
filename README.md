@@ -19,36 +19,37 @@
 
 <details>
 <summary>🌻 Latte</summary>
-<img src="assets/latte.png"/>
+<img src="assets/latte.webp"/>
 </details>
 <details>
 <summary>🪴 Frappé</summary>
-<img src="assets/frappe.png"/>
+<img src="assets/frappe.webp"/>
 </details>
 <details>
 <summary>🌺 Macchiato</summary>
-<img src="assets/macchiato.png"/>
+<img src="assets/macchiato.webp"/>
 </details>
 <details>
 <summary>🌿 Mocha</summary>
-<img src="assets/mocha.png"/>
+<img src="assets/mocha.webp"/>
 </details>
 
 ## Usage
 
 1. Clone this repository locally
-2. Go into the `src` folder then copy the folder `catppuccin-flavour` (flavour is replaced with latte/frappe/macchiato/mocha)
-3. Paste the folder to `/usr/share/sddm/themes`
-4. Edit the file in /etc/sddm.conf and change the theme in there from whatever was before to `catppuccin-flavour`
+2. Rename the `flavor.theme.conf` to `theme.conf` of for your prefered flavor (default is mocha)
+3. Move the `catppuccin` to `/usr/share/sddm/themes`
+4. Edit the file in /etc/sddm.conf and change the theme in there from whatever was before to `catppuccin`
 
 * If you don't have this file make one and make sure it has these two lines within the config. 
 `[Theme]`
-`Current=catppuccin-flavour`
+`Current=catppuccin`
 
 ## 💝 Thanks to
 
 - [DonutDev](https://github.com/DonutDev)
 - [Isabelinc](https://github.com/Isabelincorp)
+- [Isabel Roses](https://github.com/isabelroses)
 
 &nbsp;
 
