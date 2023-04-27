@@ -6,8 +6,8 @@ Item {
   implicitWidth: sleepButton.width
   Button {
     id: sleepButton
-    height: inputHeight * 1.2
-    width: inputHeight * 1.2
+    height: inputHeight
+    width: inputHeight
     hoverEnabled: true
     icon {
       source: Qt.resolvedUrl("../icons/sleep.svg")

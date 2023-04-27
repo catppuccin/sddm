@@ -56,13 +56,13 @@ Item {
   }
   Button {
     id: sessionButton
-    height: inputHeight * 1.2
-    width: inputHeight * 1.2
+    height: inputHeight
+    width: inputHeight
     hoverEnabled: true
     icon {
       source: Qt.resolvedUrl("../icons/settings.svg")
-      height: height * 0.6
-      width: width * 0.6
+      height: height
+      width: width
       color: config.text
     }
     background: Rectangle {
@@ -112,7 +112,7 @@ Item {
     width: inputWidth + padding * 2
     x: (sessionButton.width + sessionList.spacing) * -7.6
     y: -(contentHeight + padding * 2) + sessionButton.height
-    padding: inputHeight / 7
+    padding: inputHeight / 10
     background: Rectangle {
       radius: 5.4
       color: config.surface0

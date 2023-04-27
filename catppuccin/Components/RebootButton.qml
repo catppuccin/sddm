@@ -6,8 +6,8 @@ Item {
   implicitWidth: rebootButton.width
   Button {
     id: rebootButton
-    height: inputHeight * 1.2
-    width: inputHeight * 1.2
+    height: inputHeight
+    width: inputHeight
     hoverEnabled: true
     icon {
       source: Qt.resolvedUrl("../icons/reboot.svg")
