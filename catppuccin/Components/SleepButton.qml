@@ -33,9 +33,9 @@ Item {
     transitions: Transition {
       PropertyAnimation {
         properties: "color"
-        duration: 150
+        duration: 300
       }
     }
-    onClicked: sddm.sleep()
+    onClicked: sddm.suspend()
   }
 }

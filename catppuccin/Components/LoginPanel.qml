@@ -127,8 +127,8 @@ Item {
       ]
       transitions: Transition {
         PropertyAnimation {
-          properties: "color, opacity"
-          duration: 150
+          properties: "color"
+          duration: 300
         }
       }
       onClicked: {

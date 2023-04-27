@@ -42,7 +42,7 @@ TextField {
   transitions: Transition {
     PropertyAnimation {
       properties: "color"
-      duration: 150
+      duration: 300
     }
   }
 }

@@ -11,30 +11,38 @@ Item {
     model: sessionModel
     delegate: ItemDelegate {
       id: sessionEntry
-      highlighted: sessionList.currentIndex == index
       height: inputHeight
       width: parent.width
+      highlighted: sessionList.currentIndex == index
       contentItem: Text {
-        text: name
         renderType: Text.NativeRendering
-        font {
-          family: config.Font
-          pointSize: config.FontSize
-          bold: true
-        }
+        font.family: config.Font
+        font.pointSize: config.FontSize
+        font.bold: true
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        color: config.crust
+        color: config.text
+        text: name
       }
       background: Rectangle {
-        id: sessionEntryBg
+        id: sessionEntryBackground
+        color: config.surface1
         radius: 3
-        color: config.sapphire
       }
+      states: [
+        State {
+          name: "hovered"
+          when: sessionEntry.hovered
+          PropertyChanges {
+            target: sessionEntryBackground
+            color: config.surface2
+          }
+        }
+      ]
       transitions: Transition {
         PropertyAnimation {
           property: "color"
-          duration: 150
+          duration: 300
         }
       }
       MouseArea {
@@ -45,101 +53,103 @@ Item {
         }
       }
     }
-    Button {
-      id: sessionButton
-      height: inputHeight
-      width: inputHeight
-      hoverEnabled: true
-      icon.source: Qt.resolvedUrl("../icons/settings.svg")
-      icon.height: height * 0.6
-      icon.width: width * 0.6
-      icon.color: config.crust
-      background: Rectangle {
-        id: sessionButtonBackground
-        color: config.green
-        radius: 3
-      }
-      states: [
-        State {
-          name: "pressed"
-          when: sessionButton.down
-          PropertyChanges {
-            target: sessionButtonBackground
-            color: config.green
-          }
-        },
-        State {
-          name: "hovered"
-          when: sessionButton.hovered
-          PropertyChanges {
-            target: sessionButtonBackground
-            color: config.green
-          }
-        },
-        State {
-          name: "selection"
-          when: sessionPopup.visible
-          PropertyChanges {
-            target: sessionButtonBackground
-            color: config.green
-          }
+  }
+  Button {
+    id: sessionButton
+    height: inputHeight * 1.2
+    width: inputHeight * 1.2
+    hoverEnabled: true
+    icon {
+      source: Qt.resolvedUrl("../icons/settings.svg")
+      height: height * 0.6
+      width: width * 0.6
+      color: config.text
+    }
+    background: Rectangle {
+      id: sessionButtonBackground
+      color: config.surface0
+      radius: 3
+    }
+    states: [
+      State {
+        name: "pressed"
+        when: sessionButton.down
+        PropertyChanges {
+          target: sessionButtonBackground
+          color: config.surface1
         }
-      ]
-      transitions: Transition {
-        PropertyAnimation {
-          properties: "color"
-          duration: 150
+      },
+      State {
+        name: "hovered"
+        when: sessionButton.hovered
+        PropertyChanges {
+          target: sessionButtonBackground
+          color: config.surface2
+        }
+      },
+      State {
+        name: "selection"
+        when: sessionPopup.visible
+        PropertyChanges {
+          target: sessionButtonBackground
+          color: config.surface2
         }
       }
-      onClicked: {
-        sessionPopup.visible ? sessionPopup.close() : sessionPopup.open()
-        sessionButton.state = "pressed"
+    ]
+    transitions: Transition {
+      PropertyAnimation {
+        properties: "color"
+        duration: 150
       }
     }
-    Popup {
-      id: sessionPopup
-      width: inputWidth + padding * 2
-      x: sessionButton.width + sessionList.spacing
-      y: -(contentHeight + padding * 2) + sessionButton.height
-      padding: 15
-      background: Rectangle {
-        radius: 5.4
-        color: config.sapphire
-      }
-      contentItem: ListView {
-        id: sessionList
-        implicitHeight: contentHeight
-        spacing: 8
-        model: sessionWrapper
-        currentIndex: sessionModel.lastIndex
-        clip: true
-      }
-      enter: Transition {
-        ParallelAnimation {
-          NumberAnimation {
-            property: "opacity"
-            from: 0
-            to: 1
-            duration: 400
-            easing.type: Easing.OutExpo
-          }
-          NumberAnimation {
-            property: "x"
-            from: sessionPopup.x - (inputWidth * 0.1)
-            to: sessionPopup.x
-            duration: 500
-            easing.type: Easing.OutExpo
-          }
-        }
-      }
-      exit: Transition {
+    onClicked: {
+      sessionPopup.visible ? sessionPopup.close() : sessionPopup.open()
+      sessionButton.state = "pressed"
+    }
+  }
+  Popup {
+    id: sessionPopup
+    width: inputWidth + padding * 2
+    x: (sessionButton.width + sessionList.spacing) * -7.6
+    y: -(contentHeight + padding * 2) + sessionButton.height
+    padding: inputHeight / 7
+    background: Rectangle {
+      radius: 5.4
+      color: config.surface0
+    }
+    contentItem: ListView {
+      id: sessionList
+      implicitHeight: contentHeight
+      spacing: 8
+      model: sessionWrapper
+      currentIndex: sessionModel.lastIndex
+      clip: true
+    }
+    enter: Transition {
+      ParallelAnimation {
         NumberAnimation {
           property: "opacity"
-          from: 1
-          to: 0
-          duration: 300
+          from: 0
+          to: 1
+          duration: 400
           easing.type: Easing.OutExpo
         }
+        NumberAnimation {
+          property: "x"
+          from: sessionPopup.x + (inputWidth * 0.1)
+          to: sessionPopup.x
+          duration: 500
+          easing.type: Easing.OutExpo
+        }
+      }
+    }
+    exit: Transition {
+      NumberAnimation {
+        property: "opacity"
+        from: 1
+        to: 0
+        duration: 300
+        easing.type: Easing.OutExpo
       }
     }
   }

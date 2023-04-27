@@ -36,14 +36,39 @@
 
 ## Usage
 
-1. Clone this repository locally
-2. Rename the `flavor.theme.conf` to `theme.conf` of for your prefered flavor (default is mocha)
-3. Move the `catppuccin` to `/usr/share/sddm/themes`
-4. Edit the file in /etc/sddm.conf and change the theme in there from whatever was before to `catppuccin`
+1. Ensure you have the [dependensies](#dependencies)
+2. Clone this repository locally
+3. Rename the `flavor.theme.conf` to `theme.conf` of for your prefered flavor (default is mocha) for futher configuration see [configuration](#Configuration)
+4. Move the `catppuccin` to `/usr/share/sddm/themes`
+5. Edit the file in /etc/sddm.conf and change the theme in there from whatever was before to `catppuccin`
 
 * If you don't have this file make one and make sure it has these two lines within the config. 
 `[Theme]`
 `Current=catppuccin`
+
+## dependencies
+
+### Arch Based OS
+  ```bash
+  pacman -Syu qt5-graphicaleffects qt5-svg qt5-quickcontrols2
+  ```
+### Debian Based OS
+  ```bash
+  apt install --no-install-recommends qml‑module‑qtquick‑layouts qml‑module‑qtgraphicaleffects qml‑module‑qtquick‑controls2 libqt5svg5
+  ```
+
+### Red Hat Based OS
+  ```bash
+  dnf install sddm qt5‑qtgraphicaleffects qt5‑qtquickcontrols2 qt5‑qtsvg
+  ```
+
+## Configuration
+- `Font`: The chosen font
+- `FontSize`: The text size
+- `ClockEnabled`: Wether the clock is on or off, this should be set to either `true` or `false`
+- `CustomBackground`: When this is `true` it will read from `Background` to render the custom background image, this should be set to either `true` or `false`
+- `Background`: This is the location of the background image, it is recomended to use the provided `backgrounds/` directory to store the images
+- `LoginBackground`: This is a a extra background around the login panel, this should be set to either `true` or `false` 
 
 ## 💝 Thanks to
 
