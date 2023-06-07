@@ -6,8 +6,8 @@ Item {
   property var user: userField.text
   property var password: passwordField.text
   property var session: sessionPanel.session
-  property var inputHeight: Screen.height * 0.03
-  property var inputWidth: Screen.width * 0.15
+  property var inputHeight: Screen.height * 0.032
+  property var inputWidth: Screen.width * 0.16
   Rectangle {
     id: loginBackground
     anchors {
