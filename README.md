@@ -38,13 +38,12 @@
 
 1. Ensure you have the [dependensies](#dependencies)
 2. Clone this repository locally
-3. Rename the `flavor.theme.conf` to `theme.conf` of for your prefered flavor (default is mocha) for futher configuration see [configuration](#Configuration)
-4. Move the `catppuccin` to `/usr/share/sddm/themes`
-5. Edit the file in /etc/sddm.conf and change the theme in there from whatever was before to `catppuccin`
+3. Move the `catppuccin-flavor` to `/usr/share/sddm/themes`
+4. Edit the file in /etc/sddm.conf and change the theme in there from whatever was before to `catppuccin`
 
 * If you don't have this file make one and make sure it has these two lines within the config. 
 `[Theme]`
-`Current=catppuccin`
+`Current=catppuccin-flavor`
 
 ## dependencies
 
