@@ -38,12 +38,11 @@
 
 1. Ensure you have the [dependensies](#dependencies)
 2. Clone this repository locally
-3. Move the `catppuccin-flavor` to `/usr/share/sddm/themes`
-4. Edit the file in /etc/sddm.conf and change the theme in there from whatever was before to `catppuccin`
+3. Go into the src folder then copy the folder catppuccin-flavour (flavour is replaced with latte/frappe/macchiato/mocha)
+4. Paste the folder to /usr/share/sddm/themes
+5. Edit the file in /etc/sddm.conf and change the theme in there from whatever was before to catppuccin-flavour
 
-* If you don't have this file make one and make sure it has these two lines within the config. 
-`[Theme]`
-`Current=catppuccin-flavor`
+- If you don't have this file make one and make sure it has these two lines within the config. [Theme] Current=catppuccin-flavour
 
 ## dependencies
 
@@ -58,7 +57,7 @@
 
 ### Red Hat Based OS
   ```bash
-  dnf install sddm qt5‑qtgraphicaleffects qt5‑qtquickcontrols2 qt5‑qtsvg
+  dnf install qt5‑qtgraphicaleffects qt5‑qtquickcontrols2 qt5‑qtsvg
   ```
 
 ## Configuration
@@ -67,7 +66,7 @@
 - `ClockEnabled`: Wether the clock is on or off, this should be set to either `true` or `false`
 - `CustomBackground`: When this is `true` it will read from `Background` to render the custom background image, this should be set to either `true` or `false`
 - `Background`: This is the location of the background image, it is recomended to use the provided `backgrounds/` directory to store the images
-- `LoginBackground`: This is a a extra background around the login panel, this should be set to either `true` or `false` 
+- `LoginBackground`: This is a extra background around the login panel, this should be set to either `true` or `false` 
 
 ## 💝 Thanks to
 
