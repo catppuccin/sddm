@@ -60,7 +60,7 @@
   ```
 ### Solus OS
   ```bash
-  eopk install qt5-graphicaleffects qt5-quickcontrols2 qt5-svg
+  eopkg install qt5-graphicaleffects qt5-quickcontrols2 qt5-svg
   ```
 
 ## Configuration
