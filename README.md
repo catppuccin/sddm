@@ -36,7 +36,7 @@
 
 ## Usage
 
-1. Ensure you have the [dependensies](#dependencies)
+1. Ensure you have the [dependencies](#dependencies)
 2. Clone this repository locally
 3. Go into the src folder then copy the folder catppuccin-flavour (flavour is replaced with latte/frappe/macchiato/mocha)
 4. Paste the folder to /usr/share/sddm/themes
