@@ -138,9 +138,7 @@ Item {
   }
   Connections {
     target: sddm
-    function onLoginSucceeded() {
-      coverScreen.start()
-    }
+
     function onLoginFailed() {
       passwordField.text = ""
       passwordField.focus = true
