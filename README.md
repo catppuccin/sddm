@@ -60,13 +60,13 @@ pacman -Syu qt5-graphicaleffects qt5-svg qt5-quickcontrols2
 ### Debian Based OS
 
 ```bash
-apt install --no-install-recommends qml‑module‑qtquick‑layouts qml‑module‑qtgraphicaleffects qml‑module‑qtquick‑controls2 libqt5svg5
+apt install --no-install-recommends qml-module-qtquick-layouts qml-module-qtgraphicaleffects qml-module-qtquick-controls2 libqt5svg5
 ```
 
 ### Red Hat Based OS
 
 ```bash
-dnf install qt5‑qtgraphicaleffects qt5‑qtquickcontrols2 qt5‑qtsvg
+dnf install qt5-qtgraphicaleffects qt5-qtquickcontrols2 qt5-qtsvg
 ```
 
 ### Solus OS
