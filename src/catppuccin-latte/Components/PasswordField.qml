@@ -8,7 +8,7 @@ TextField {
   placeholderText: "Password"
   echoMode: TextInput.Password
   passwordCharacter: "•"
-  passwordMaskDelay: 1000
+  passwordMaskDelay: config.PasswordShowLastLetter
   selectionColor: config.overlay0
   renderType: Text.NativeRendering
   font.family: config.Font
