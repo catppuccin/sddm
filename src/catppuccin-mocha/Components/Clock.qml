@@ -5,6 +5,7 @@ Clock {
   id: time
   color: config.text
   timeFont.family: config.Font
+  dateFont.family: config.Font
   anchors {
     margins: 10
     top: parent.top
