@@ -79,7 +79,7 @@ eopkg install qt5-graphicaleffects qt5-quickcontrols2 qt5-svg
 
 - `Font`: The chosen font
 - `FontSize`: The text size
-- `ClockEnabled`: Wether the clock is on or off, this should be set to either `true` or `false`
+- `ClockEnabled`: Whether the clock is on or off, this should be set to either `true` or `false`
 - `CustomBackground`: When this is `true` it will read from `Background` to render the custom background image, this should be set to either `true` or `false`
 - `Background`: This is the location of the background image, it is recomended to use the provided `backgrounds/` directory to store the images
 - `LoginBackground`: This is a extra background around the login panel, this should be set to either `true` or `false`
