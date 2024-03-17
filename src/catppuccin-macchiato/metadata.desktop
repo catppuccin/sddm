@@ -11,3 +11,4 @@ TranslationsDirectory=translations
 Theme-Id=Catppuccin
 Theme-API=2.0
 License=MIT
+QtVersion=6
