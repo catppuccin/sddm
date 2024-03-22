@@ -16,8 +16,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build
-        run: ./build.sh
+      - name: Setup Just
+        run: sudo snap install --edge --classic just
+
+      - name: Build and Package
+        run: just zip
 
       - name: Release
         uses: softprops/action-gh-release@v2
