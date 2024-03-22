@@ -1,5 +1,5 @@
 [SddmGreeterTheme]
-Name=Catppuccin Frappe
+Name=Catppuccin %%THEME%%
 Description=Soothing pastel theme for SDDM
 Type=sddm-theme
 Version=2.1
