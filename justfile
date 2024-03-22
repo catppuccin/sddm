@@ -2,43 +2,34 @@ _default:
   @just --list
 
 output_dir := "dist"
-themes := "THEMES=\"mocha macchiato frappe latte\""
 
 # Remove output directory
 clean:
   rm -rfv {{output_dir}}
 
-# Build theme
-build: clean
-  #!/usr/bin/env sh
-
-  {{themes}}
-
-  for THEME in $THEMES; do
+_build flavor:
   # make sure the directories we need exist
-  mkdir -p "{{output_dir}}/catppuccin-$THEME"
+  mkdir -p "{{output_dir}}/catppuccin-{{flavor}}"
 
   # copy the files to the correct location
-  cp -r src/* "{{output_dir}}/catppuccin-$THEME"
+  cp -r src/* "{{output_dir}}/catppuccin-{{flavor}}"
 
   # replace the theme name in the metadata file
-  sed -i -e "s/%%THEME%%/$THEME/g" "{{output_dir}}/catppuccin-$THEME/metadata.desktop"
+  sed -i -e "s/%%THEME%%/{{flavor}}/g" "{{output_dir}}/catppuccin-{{flavor}}/metadata.desktop"
 
-  # handle items that are diffrent per theme
-  cp "pertheme/$THEME.png" "{{output_dir}}/catppuccin-$THEME/preview.png"
-  cp "pertheme/$THEME.conf" "{{output_dir}}/catppuccin-$THEME/theme.conf"
-  done
+  # handle items that are different per theme
+  cp "pertheme/{{flavor}}.png" "{{output_dir}}/catppuccin-{{flavor}}/preview.png"
+  cp "pertheme/{{flavor}}.conf" "{{output_dir}}/catppuccin-{{flavor}}/theme.conf"
+
+# Build theme
+build: clean (_build "latte") (_build "frappe") (_build "macchiato") (_build "mocha")
+
+_zip flavor:
+  zip -r {{output_dir}}/catppuccin-{{flavor}}.zip {{output_dir}}/catppuccin-{{flavor}}
 
 # Generate zips
-zip: build
-  #!/usr/bin/env sh
-
-  {{themes}}
-
-  for THEME in $THEMES; do
-  zip -r {{output_dir}}/catppuccin-$THEME.zip {{output_dir}}/catppuccin-$THEME
-  done
+zip: build (_zip "latte") (_zip "frappe") (_zip "macchiato") (_zip "mocha")
 
 # Install themes
 install: build
-  sudo cp -r {{output_dir}}/catppuccin-* /usr/share/sddm/themes/
+  cp -r {{output_dir}}/catppuccin-* /usr/share/sddm/themes/
