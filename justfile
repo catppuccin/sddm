@@ -25,7 +25,7 @@ _build flavor:
 build: clean (_build "latte") (_build "frappe") (_build "macchiato") (_build "mocha")
 
 _zip flavor:
-  zip -r {{output_dir}}/catppuccin-{{flavor}}.zip {{output_dir}}/catppuccin-{{flavor}}
+  cd {{output_dir}} ; zip -r catppuccin-{{flavor}}.zip catppuccin-{{flavor}}
 
 # Generate zips
 zip: build (_zip "latte") (_zip "frappe") (_zip "macchiato") (_zip "mocha")
