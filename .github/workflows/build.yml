@@ -1,0 +1,44 @@
+name: Build and Release
+
+permissions:
+  contents: write
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        themes:
+          - mocha
+          - macchiato
+          - frappe
+          - latte
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          mkdir -p dist/${{ matrix.themes }}
+          cp -r src/* dist/${{ matrix.themes }}
+          sed -i "s/%%THEME%%/${{ matrix.themes }}/g" dist/${{ matrix.themes }}/metadata.desktop
+          cp pertheme/${{ matrix.themes }}.png dist/${{ matrix.themes }}/preview.png
+          cp pertheme/${{ matrix.themes }}.conf dist/${{ matrix.themes }}/theme.conf
+
+      - name: Create zips
+        run: |
+          cd dist
+          zip -r ${{ matrix.themes }}.zip ${{ matrix.themes }}
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/${{ matrix.themes }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
