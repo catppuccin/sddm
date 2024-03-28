@@ -53,25 +53,25 @@ Current=catppuccin-flavour
 ### Arch Based OS
 
 ```bash
-pacman -Syu qt5-svg qt5-quickcontrols2
+pacman -Syu qt6-svg qt6-declarative
 ```
 
 ### Debian Based OS
 
 ```bash
-apt install --no-install-recommends qml-module-qtquick-layouts qml-module-qtquick-controls2 libqt5svg5
+apt install --no-install-recommends qml-module-qtquick-layouts qml-module-qtquick-controls2 libqt6svg6
 ```
 
 ### RPM Based OS
 
 ```bash
-dnf install qt5-qtquickcontrols2 qt5-qtsvg
+dnf install qt6-qtquickcontrols2 qt6-qtsvg
 ```
 
 ### Solus OS
 
 ```bash
-eopkg install qt5-quickcontrols2 qt5-svg
+eopkg install qt6-quickcontrols2 qt6-svg
 ```
 
 ## Configuration
