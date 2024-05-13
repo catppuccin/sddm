@@ -74,6 +74,33 @@ dnf install qt6-qtquickcontrols2 qt6-qtsvg
 eopkg install qt6-quickcontrols2 qt6-svg
 ```
 
+### NixOS
+
+This theme is available in nixpkgs [`catppuccin-sddm`](https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ca/catppuccin-sddm/package.nix).
+
+Add the package to systemPackages, you can customize the theme by overriding the attributes:
+
+```nix
+environment.systemPackages = [(
+  pkgs.catppuccin-sddm.override {
+    flavor = "mocha";
+    font  = "Noto Sans";
+    fontSize = "9";
+    background = "${./wallpaper.png}";
+    loginBackground = true;
+  }
+)];
+```
+
+Then set it as the theme in the sddm configuration, change the suffix to the flavor you set in the package override:
+
+```nix
+displayManager.sddm = {
+  enable = true;
+  theme = "catppuccin-mocha";
+};
+```
+
 ## Configuration
 
 - `Font`: The chosen font
