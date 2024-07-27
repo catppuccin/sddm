@@ -81,15 +81,15 @@ This theme is available in nixpkgs [`catppuccin-sddm`](https://github.com/NixOS/
 Add the package to systemPackages, you can customize the theme by overriding the attributes:
 
 ```nix
-environment.systemPackages = [(
-  pkgs.catppuccin-sddm.override {
+environment.systemPackages = with pkgs; [
+  (catppuccin-sddm.override {
     flavor = "mocha";
     font  = "Noto Sans";
     fontSize = "9";
-    background = "${./wallpaper.png}";
     loginBackground = true;
-  }
-)];
+    background = "${./wallpaper.png}";  # The wallpaper would be in /etc/nixos/wallpaper.png
+  })
+];
 ```
 
 Then set it as the theme in the sddm configuration, change the suffix to the flavor you set in the package override:
