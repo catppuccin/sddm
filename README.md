@@ -39,7 +39,7 @@
 1. Ensure you have the [dependencies](#dependencies).
 2. Get your preferred theme from the [releases page](https://github.com/catppuccin/sddm/releases).
 3. Unzip the contents of the release into `/usr/share/sddm/themes/`
-4. Edit the file in `/etc/sddm.conf/` and change the theme in there to `catppuccin-<flavour>`. For example, `catppuccin-mocha`.
+4. Edit the file in `/etc/sddm.conf.d/` and change the theme in there to `catppuccin-<flavour>`. For example, `catppuccin-mocha`.
 
 - If you don't have this file make one with `.conf` extension and make sure it has these two lines within the config:
 
