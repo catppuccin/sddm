@@ -53,7 +53,7 @@ Current=catppuccin-flavour
 ### Arch Based OS
 
 ```bash
-pacman -Syu qt6-svg qt6-declarative
+pacman -Syu qt6-svg qt6-declarative qt5-quickcontrols2
 ```
 
 ### Debian Based OS
