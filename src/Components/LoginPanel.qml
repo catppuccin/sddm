@@ -1,6 +1,6 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
-import QtQuick.Controls 2.15
+import QtQuick 6.8
+import QtQuick.Window 6.8
+import QtQuick.Controls 6.8
 
 Item {
   property var user: userField.text
@@ -8,6 +8,7 @@ Item {
   property var session: sessionPanel.session
   property var inputHeight: Screen.height * 0.032
   property var inputWidth: Screen.width * 0.16
+
   Rectangle {
     id: loginBackground
     anchors {
@@ -20,6 +21,7 @@ Item {
     visible: config.LoginBackground == "true" ? true : false
     color: config.mantle
   }
+
   Column {
     spacing: 8
     anchors {
@@ -37,6 +39,7 @@ Item {
     }
     z: 5
   }
+
   Column {
     spacing: 8
     anchors {
@@ -48,6 +51,7 @@ Item {
     }
     z: 5
   }
+
   Column {
     spacing: 8
     z: 5
@@ -67,6 +71,7 @@ Item {
       width: parent.width
       onAccepted: loginButton.clicked()
     }
+
     Button {
       id: loginButton
       height: inputHeight
@@ -91,6 +96,7 @@ Item {
         color: config.sapphire
         radius: 3
       }
+
       states: [
         State {
           name: "pressed"
@@ -98,9 +104,6 @@ Item {
           PropertyChanges {
             target: buttonBackground
             color: config.teal
-          }
-          PropertyChanges {
-            target: buttonText
           }
         },
         State {
@@ -110,9 +113,6 @@ Item {
             target: buttonBackground
             color: config.teal
           }
-          PropertyChanges {
-            target: buttonText
-          }
         },
         State {
           name: "enabled"
@@ -120,22 +120,22 @@ Item {
           PropertyChanges {
             target: buttonBackground
           }
-          PropertyChanges {
-            target: buttonText
-          }
         }
       ]
+
       transitions: Transition {
         PropertyAnimation {
-          properties: "color"
+          property: "color"
           duration: 300
         }
       }
+
       onClicked: {
         sddm.login(user, password, session)
       }
     }
   }
+
   Connections {
     target: sddm
 

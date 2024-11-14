@@ -1,19 +1,22 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQml.Models 2.15
+import QtQuick 6.8
+import QtQuick.Controls 6.8
+import QtQml.Models 6.8
 
 Item {
   property var session: sessionList.currentIndex
   implicitHeight: sessionButton.height
   implicitWidth: sessionButton.width
+
   DelegateModel {
     id: sessionWrapper
     model: sessionModel
+
     delegate: ItemDelegate {
       id: sessionEntry
       height: inputHeight
       width: parent.width
       highlighted: sessionList.currentIndex == index
+      
       contentItem: Text {
         renderType: Text.NativeRendering
         font.family: config.Font
@@ -24,11 +27,13 @@ Item {
         color: config.text
         text: name
       }
+
       background: Rectangle {
         id: sessionEntryBackground
         color: config.surface1
         radius: 3
       }
+
       states: [
         State {
           name: "hovered"
@@ -39,12 +44,14 @@ Item {
           }
         }
       ]
+
       transitions: Transition {
         PropertyAnimation {
           property: "color"
           duration: 300
         }
       }
+
       MouseArea {
         anchors.fill: parent
         onClicked: {
@@ -54,22 +61,24 @@ Item {
       }
     }
   }
+
   Button {
     id: sessionButton
     height: inputHeight
     width: inputHeight
     hoverEnabled: true
-    icon {
-      source: Qt.resolvedUrl("../icons/settings.svg")
-      height: height
-      width: width
-      color: config.text
-    }
+
+    icon.source: Qt.resolvedUrl("../icons/settings.svg")
+    icon.height: height
+    icon.width: width
+    icon.color: config.text
+
     background: Rectangle {
       id: sessionButtonBackground
       color: config.surface0
       radius: 3
     }
+
     states: [
       State {
         name: "pressed"
@@ -96,27 +105,32 @@ Item {
         }
       }
     ]
+
     transitions: Transition {
       PropertyAnimation {
         properties: "color"
         duration: 150
       }
     }
+
     onClicked: {
       sessionPopup.visible ? sessionPopup.close() : sessionPopup.open()
       sessionButton.state = "pressed"
     }
   }
+
   Popup {
     id: sessionPopup
     width: inputWidth + padding * 2
     x: (sessionButton.width + sessionList.spacing) * -7.6
     y: -(contentHeight + padding * 2) + sessionButton.height
     padding: inputHeight / 10
+
     background: Rectangle {
       radius: 5.4
       color: config.surface0
     }
+
     contentItem: ListView {
       id: sessionList
       implicitHeight: contentHeight
@@ -125,6 +139,7 @@ Item {
       currentIndex: sessionModel.lastIndex
       clip: true
     }
+
     enter: Transition {
       ParallelAnimation {
         NumberAnimation {
@@ -143,6 +158,7 @@ Item {
         }
       }
     }
+
     exit: Transition {
       NumberAnimation {
         property: "opacity"

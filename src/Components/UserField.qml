@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick 6.8
+import QtQuick.Controls 6.8
 
 TextField {
   id: userField
@@ -9,20 +9,20 @@ TextField {
   echoMode: TextInput.Normal
   selectionColor: config.overlay0
   renderType: Text.NativeRendering
-  font {
-    family: config.Font
-    pointSize: config.FontSize
-    bold: true
-  }
+  font.family: config.Font
+  font.pointSize: config.FontSize
+  font.bold: true
   color: config.text
   horizontalAlignment: Text.AlignHCenter
   placeholderText: "Username"
   text: userModel.lastUser
+
   background: Rectangle {
     id: userFieldBackground
     color: config.surface0
     radius: 3
   }
+
   states: [
     State {
       name: "focused"
@@ -41,6 +41,7 @@ TextField {
       }
     }
   ]
+
   transitions: Transition {
     PropertyAnimation {
       properties: "color"

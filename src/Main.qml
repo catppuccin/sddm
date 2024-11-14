@@ -1,12 +1,13 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
-import QtQuick.Controls 2.15
+import QtQuick 6.8
+import QtQuick.Window 6.8
+import QtQuick.Controls 6.8
 import "Components"
 
 Item {
   id: root
   height: Screen.height
   width: Screen.width
+
   Rectangle {
     id: background
     anchors.fill: parent
@@ -15,6 +16,7 @@ Item {
     z: 0
     color: config.base
   }
+
   Image {
     id: backgroundImage
     anchors.fill: parent
@@ -29,6 +31,7 @@ Item {
     mipmap: true
     clip: true
   }
+
   Item {
     id: mainPanel
     z: 3
@@ -36,10 +39,12 @@ Item {
       fill: parent
       margins: 50
     }
+
     Clock {
       id: time
       visible: config.ClockEnabled == "true" ? true : false
     }
+
     LoginPanel {
       id: loginPanel
       anchors.fill: parent

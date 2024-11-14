@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick 6.8
+import QtQuick.Controls 6.8
 
 TextField {
   id: passwordField
@@ -16,11 +16,13 @@ TextField {
   font.bold: true
   color: config.text
   horizontalAlignment: TextInput.AlignHCenter
+
   background: Rectangle {
     id: passFieldBackground
     radius: 3
     color: config.surface0
   }
+
   states: [
     State {
       name: "focused"
@@ -39,9 +41,10 @@ TextField {
       }
     }
   ]
+
   transitions: Transition {
     PropertyAnimation {
-      properties: "color"
+      property: "color"
       duration: 300
     }
   }
