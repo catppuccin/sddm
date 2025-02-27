@@ -98,7 +98,6 @@ Then set it as the theme in the sddm configuration, change the suffix to the fla
 displayManager.sddm = {
   enable = true;
   theme = "catppuccin-mocha";
-  package = pkgs.kdePackages.sddm;
 };
 ```
 
