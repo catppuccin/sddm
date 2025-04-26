@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
+import "../assets"
 
 Item {
   property var user: userField.text
@@ -14,7 +15,7 @@ Item {
       verticalCenter: parent.verticalCenter
       horizontalCenter: parent.horizontalCenter
     }
-    height: inputHeight * 5.3
+    height: inputHeight * ( config.UserIcon == "true" ? 11.2 : 5.3 )
     width: inputWidth * 1.2
     radius: 5
     visible: config.LoginBackground == "true" ? true : false
@@ -56,6 +57,31 @@ Item {
       verticalCenter: parent.verticalCenter
       horizontalCenter: parent.horizontalCenter
     }
+    Rectangle {
+      visible: config.UserIcon == "true" ? true : false
+      width: inputWidth * 0.64 ; height: inputWidth * 0.64
+      antialiasing: true
+      color: "transparent"
+      Image {
+        source: Qt.resolvedUrl("../assets/defaultIcon.svg")
+        height: parent.width
+        width: parent.width
+      }
+      Image {
+        // common icon path for KDE and GNOME
+        source: Qt.resolvedUrl("/var/lib/AccountsService/icons/" + user)
+        height: parent.width
+        width: parent.width
+      }
+      MaskFull {
+        // workaround to prevent clipping
+        height: parent.width + 1
+        width: parent.width + 1
+      }
+      anchors {
+        horizontalCenter: parent.horizontalCenter
+      }
+    }
     UserField {
       id: userField
       height: inputHeight
@@ -88,7 +114,7 @@ Item {
       }
       background: Rectangle {
         id: buttonBackground
-        color: config.sapphire
+        color: config.red
         radius: 3
       }
       states: [
@@ -97,7 +123,7 @@ Item {
           when: loginButton.down
           PropertyChanges {
             target: buttonBackground
-            color: config.teal
+            color: config.subtext0
           }
           PropertyChanges {
             target: buttonText
@@ -108,7 +134,7 @@ Item {
           when: loginButton.hovered
           PropertyChanges {
             target: buttonBackground
-            color: config.teal
+            color: config.subtext0
           }
           PropertyChanges {
             target: buttonText
