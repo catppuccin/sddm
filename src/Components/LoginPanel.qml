@@ -75,8 +75,12 @@ Item {
       }
       MaskFull {
         // workaround to prevent clipping
-        height: parent.width + 1
-        width: parent.width + 1
+        height: parent.width + 2
+        width: parent.width + 2
+	anchors {
+	  horizontalCenter: parent.horizontalCenter
+	  verticalCenter: parent.verticalCenter
+	}
       }
       anchors {
         horizontalCenter: parent.horizontalCenter
