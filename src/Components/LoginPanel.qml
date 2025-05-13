@@ -60,10 +60,9 @@ Item {
     Rectangle {
       visible: config.UserIcon == "true" ? true : false
       width: inputWidth * 0.64 ; height: inputWidth * 0.64
-      antialiasing: true
       color: "transparent"
       Image {
-        source: Qt.resolvedUrl("../assets/defaultIcon.svg")
+        source: Qt.resolvedUrl("../assets/defaultIcon.png")
         height: parent.width
         width: parent.width
       }
@@ -77,10 +76,10 @@ Item {
         // workaround to prevent clipping
         height: parent.width + 2
         width: parent.width + 2
-	anchors {
-	  horizontalCenter: parent.horizontalCenter
-	  verticalCenter: parent.verticalCenter
-	}
+        anchors {
+          horizontalCenter: parent.horizontalCenter
+          verticalCenter: parent.verticalCenter
+        }
       }
       anchors {
         horizontalCenter: parent.horizontalCenter
