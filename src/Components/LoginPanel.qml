@@ -117,7 +117,7 @@ Item {
       }
       background: Rectangle {
         id: buttonBackground
-        color: config.red
+        color: config.AccentColor
         radius: 3
       }
       states: [

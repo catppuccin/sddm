@@ -111,7 +111,7 @@ displayManager.sddm = {
 - `Background`: This is the location of the background image, it is recomended to use the provided `backgrounds/` directory to store the images
 - `LoginBackground`: This is a extra background around the login panel, this should be set to either `true` or `false`
 - `UserIcon`: When this is set to `true` the user icon will be displayed, this should be set to either `true` or `false`
-- `ThemeColor`: The color of the login button, this should be the hex code of one of the palette colors
+- `AccentColor`: The color of the login button, this should be the hex code of one of the palette colors
 
 ## 💝 Thanks to
 
