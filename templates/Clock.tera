@@ -1,0 +1,23 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+    - accent
+  hex_format: "\"#{{R}}{{G}}{{B}}{{Z}}\""
+  filename: "./themes/catppuccin-{{flavor.identifier}}-{{accent}}/Components/Clock.qml"
+---
+import QtQuick 2.15
+import SddmComponents 2.0
+
+Clock {
+  id: time
+  color: {{text.hex}}
+  timeFont.family: config.Font
+  dateFont.family: config.Font
+  anchors {
+    margins: 10
+    top: parent.top
+    right: parent.right
+  }
+}

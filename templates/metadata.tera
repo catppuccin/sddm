@@ -1,0 +1,22 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+    - accent
+  filename: "./themes/catppuccin-{{flavor.identifier}}-{{accent}}/metadata.desktop"
+---
+[SddmGreeterTheme]
+Name=Catppuccin {{flavor.name}} {{accent}}
+Description=Soothing pastel theme for SDDM
+Type=sddm-theme
+Version=2.1
+Website=https://github.com/catppuccin/sddm
+Screenshot=preview.png
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Theme-Id=Catppuccin
+Theme-API=2.0
+License=MIT
+QtVersion=6

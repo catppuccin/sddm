@@ -1,0 +1,50 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+    - accent
+  hex_format: "\"#{{R}}{{G}}{{B}}{{Z}}\""
+  filename: "./themes/catppuccin-{{flavor.identifier}}-{{accent}}/Components/PowerButton.qml"
+---
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+
+Item {
+  implicitHeight: powerButton.height
+  implicitWidth: powerButton.width
+  Button {
+    id: powerButton
+    height: inputHeight
+    width: inputHeight
+    hoverEnabled: true
+    icon {
+      source: Qt.resolvedUrl("../icons/power.svg")
+      height: height
+      width: width
+      color: {{crust.hex}}
+    }
+    background: Rectangle {
+      id: powerButtonBackground
+      radius: 3
+      color: {{red.hex}}
+    }
+    states: [
+      State {
+        name: "hovered"
+        when: powerButton.hovered
+        PropertyChanges {
+          target: powerButtonBackground
+          color: {{rosewater.hex}}
+        }
+      }
+    ]
+    transitions: Transition {
+      PropertyAnimation {
+        properties: "color"
+        duration: 300
+      }
+    }
+    onClicked: sddm.powerOff()
+  }
+}
