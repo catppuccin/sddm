@@ -1,3 +1,14 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+    - accent
+  app: "sddm"
+  author: "a9lim"
+  hex_format: "\"#{{R}}{{G}}{{B}}{{Z}}\""
+  filename: "../themes/{{flavor.identifier}}-{{accent}}/Components/LoginPanel.qml"
+---
 import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
@@ -19,7 +30,7 @@ Item {
     width: inputWidth * 1.2
     radius: 5
     visible: config.LoginBackground == "true" ? true : false
-    color: config.mantle
+    color: {{mantle.hex}}
   }
   Column {
     spacing: 8
@@ -112,12 +123,12 @@ Item {
         }
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        color: config.crust
+        color: {{crust.hex}}
         text: "Login"
       }
       background: Rectangle {
         id: buttonBackground
-        color: config.AccentColor
+        color: {{flavor.colors[accent].hex}}
         radius: 3
       }
       states: [
@@ -126,7 +137,7 @@ Item {
           when: loginButton.down
           PropertyChanges {
             target: buttonBackground
-            color: config.subtext0
+            color: {{subtext0.hex}}
           }
           PropertyChanges {
             target: buttonText
@@ -137,7 +148,7 @@ Item {
           when: loginButton.hovered
           PropertyChanges {
             target: buttonBackground
-            color: config.subtext0
+            color: {{subtext0.hex}}
           }
           PropertyChanges {
             target: buttonText

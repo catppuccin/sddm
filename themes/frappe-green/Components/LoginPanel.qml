@@ -19,7 +19,7 @@ Item {
     width: inputWidth * 1.2
     radius: 5
     visible: config.LoginBackground == "true" ? true : false
-    color: config.mantle
+    color: "#292C3C"
   }
   Column {
     spacing: 8
@@ -112,12 +112,12 @@ Item {
         }
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        color: config.crust
+        color: "#232634"
         text: "Login"
       }
       background: Rectangle {
         id: buttonBackground
-        color: config.AccentColor
+        color: "#A6D189"
         radius: 3
       }
       states: [
@@ -126,7 +126,7 @@ Item {
           when: loginButton.down
           PropertyChanges {
             target: buttonBackground
-            color: config.subtext0
+            color: "#A5ADCE"
           }
           PropertyChanges {
             target: buttonText
@@ -137,7 +137,7 @@ Item {
           when: loginButton.hovered
           PropertyChanges {
             target: buttonBackground
-            color: config.subtext0
+            color: "#A5ADCE"
           }
           PropertyChanges {
             target: buttonText

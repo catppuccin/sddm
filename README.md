@@ -41,7 +41,7 @@
     ```shell
     git clone https://github.com/catppuccin/sddm.git && cd sddm
     ```
-3. Copy all or selected theme(s) from the `themes` folder to
+3. Copy theme(s) of your choice from the `themes` folder to
 `/usr/share/sddm/themes/`. E.g. to copy `mocha-red`, use:
     ```shell
     sudo cp -r themes/mocha-red/ /usr/share/sddm/themes/

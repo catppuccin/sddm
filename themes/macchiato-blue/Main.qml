@@ -13,7 +13,7 @@ Item {
     height: parent.height
     width: parent.width
     z: 0
-    color: config.base
+    color: "#24273A"
   }
   Image {
     id: backgroundImage

@@ -1,3 +1,14 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+    - accent
+  app: "sddm"
+  author: "a9lim"
+  hex_format: "\"#{{R}}{{G}}{{B}}{{Z}}\""
+  filename: "../themes/{{flavor.identifier}}-{{accent}}/Components/SleepButton.qml"
+---
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
@@ -13,11 +24,11 @@ Item {
       source: Qt.resolvedUrl("../icons/sleep.svg")
       height: height
       width: width
-      color: config.crust
+      color: {{crust.hex}}
     }
     background: Rectangle {
       id: sleepButtonBg
-      color: config.red
+      color: {{red.hex}}
       radius: 3
     }
     states: [
@@ -26,7 +37,7 @@ Item {
         when: sleepButton.hovered
         PropertyChanges {
           target: sleepButtonBg
-          color: config.rosewater
+          color: {{rosewater.hex}}
         }
       }
     ]

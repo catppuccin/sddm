@@ -3,7 +3,7 @@ import SddmComponents 2.0
 
 Clock {
   id: time
-  color: config.text
+  color: "#C6D0F5"
   timeFont.family: config.Font
   dateFont.family: config.Font
   anchors {

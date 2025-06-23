@@ -21,12 +21,12 @@ Item {
         font.bold: true
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        color: config.text
+        color: "#CDD6F4"
         text: name
       }
       background: Rectangle {
         id: sessionEntryBackground
-        color: config.surface1
+        color: "#45475A"
         radius: 3
       }
       states: [
@@ -35,7 +35,7 @@ Item {
           when: sessionEntry.hovered
           PropertyChanges {
             target: sessionEntryBackground
-            color: config.surface2
+            color: "#585B70"
           }
         }
       ]
@@ -63,11 +63,11 @@ Item {
       source: Qt.resolvedUrl("../icons/settings.svg")
       height: height
       width: width
-      color: config.text
+      color: "#CDD6F4"
     }
     background: Rectangle {
       id: sessionButtonBackground
-      color: config.surface0
+      color: "#313244"
       radius: 3
     }
     states: [
@@ -76,7 +76,7 @@ Item {
         when: sessionButton.down
         PropertyChanges {
           target: sessionButtonBackground
-          color: config.surface1
+          color: "#45475A"
         }
       },
       State {
@@ -84,7 +84,7 @@ Item {
         when: sessionButton.hovered
         PropertyChanges {
           target: sessionButtonBackground
-          color: config.surface2
+          color: "#585B70"
         }
       },
       State {
@@ -92,7 +92,7 @@ Item {
         when: sessionPopup.visible
         PropertyChanges {
           target: sessionButtonBackground
-          color: config.surface2
+          color: "#585B70"
         }
       }
     ]
@@ -115,7 +115,7 @@ Item {
     padding: inputHeight / 10
     background: Rectangle {
       radius: 5.4
-      color: config.surface0
+      color: "#313244"
     }
     contentItem: ListView {
       id: sessionList

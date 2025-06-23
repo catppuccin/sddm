@@ -1,4 +1,3 @@
-// Generated from SVG file mask.svg
 import QtQuick
 import QtQuick.Shapes
 
@@ -12,12 +11,12 @@ Item {
         preferredRendererType: Shape.CurveRenderer
         ShapePath {
             strokeColor: "transparent"
-            fillColor: config.LoginBackground == "true" ? config.mantle : config.base
+            fillColor: config.LoginBackground == "true" ? "#292C3C" : "#303446"
             fillRule: ShapePath.WindingFill
             PathSvg { path: "M 0 0 L 0 54.328 L 54.328 54.328 L 54.328 0 L 0 0 M 27.1637 0.705383 C 41.7763 0.705384 53.622 12.5512 53.622 27.1637 C 53.622 41.7763 41.7763 53.622 27.1637 53.622 C 12.5512 53.622 0.705384 41.7763 0.705383 27.1637 C 0.705383 12.5512 12.5512 0.705383 27.1637 0.705383 " }
         }
         ShapePath {
-            strokeColor: config.text
+            strokeColor: "#C6D0F5"
             strokeWidth: 1.37538
             capStyle: ShapePath.FlatCap
             joinStyle: ShapePath.MiterJoin

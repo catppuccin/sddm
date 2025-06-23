@@ -7,20 +7,20 @@ TextField {
   width: inputWidth
   selectByMouse: true
   echoMode: TextInput.Normal
-  selectionColor: config.overlay0
+  selectionColor: "#6C7086"
   renderType: Text.NativeRendering
   font {
     family: config.Font
     pointSize: config.FontSize
     bold: true
   }
-  color: config.text
+  color: "#CDD6F4"
   horizontalAlignment: Text.AlignHCenter
   placeholderText: "Username"
   text: userModel.lastUser
   background: Rectangle {
     id: userFieldBackground
-    color: config.surface0
+    color: "#313244"
     radius: 3
   }
   states: [
@@ -29,7 +29,7 @@ TextField {
       when: userField.activeFocus
       PropertyChanges {
         target: userFieldBackground
-        color: config.surface1
+        color: "#45475A"
       }
     },
     State {
@@ -37,7 +37,7 @@ TextField {
       when: userField.hovered
       PropertyChanges {
         target: userFieldBackground
-        color: config.surface1
+        color: "#45475A"
       }
     }
   ]

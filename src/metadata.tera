@@ -1,5 +1,16 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+    - accent
+  app: "sddm"
+  author: "a9lim"
+  hex_format: "\"#{{R}}{{G}}{{B}}{{Z}}\""
+  filename: "../themes/{{flavor.identifier}}-{{accent}}/metadata.desktop"
+---
 [SddmGreeterTheme]
-Name=Catppuccin %%THEME%%
+Name=Catppuccin {{flavor.name}} {{accent}}
 Description=Soothing pastel theme for SDDM
 Type=sddm-theme
 Version=2.1
