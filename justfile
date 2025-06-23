@@ -5,7 +5,6 @@ build:
   #!/usr/bin/env bash 
   rm -r ./themes
   for template in $(ls ./templates/*); do
-    echo $template
     whiskers $template
   done
   for flavor in $(whiskers --list-flavors -o plain ); do
@@ -16,6 +15,8 @@ build:
       else
         cp ./assets/defaultIcon.png ./themes/catppuccin-$flavor-$accent/assets/defaultIcon.png 
       fi
+      # stopgap for previews
+      cp ./perflavor/$flavor.png ./themes/catppuccin-$flavor-$accent/preview.png
     done
   done
   
