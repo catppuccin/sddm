@@ -37,16 +37,16 @@
 ## Usage
 
 1. Ensure you have the [dependencies](#dependencies).
-2. Clone this repository locally and enter the cloned folder:
+2. Clone this repository and enter the cloned folder:
     ```shell
     git clone https://github.com/catppuccin/sddm.git && cd sddm
     ```
 3. Copy theme(s) of your choice from the `themes` folder to
-`/usr/share/sddm/themes/`. E.g. to copy `mocha-red`, use:
+`/usr/share/sddm/themes/`. E.g. to copy `catppuccin-mocha-red`, use:
     ```shell
-    sudo cp -r themes/mocha-red/ /usr/share/sddm/themes/
+    sudo cp -r themes/catppuccin-mocha-red/ /usr/share/sddm/themes/
     ```
-4. Edit the file `/etc/sddm.conf` and change the theme in there to `<flavour>-<accent>`. For example, `mocha-red`.
+4. Edit the file `/etc/sddm.conf` and change the theme in there to `catppuccin-<flavour>-<accent>`. For example, `catppuccin-mocha-red`.
 
 - If you don't have this file make one with `.conf` extension and make sure it has these two lines within the config:
 
