@@ -37,9 +37,16 @@
 ## Usage
 
 1. Ensure you have the [dependencies](#dependencies).
-2. Get your preferred theme from the [releases page](https://github.com/catppuccin/sddm/releases).
-3. Unzip the contents of the release into `/usr/share/sddm/themes/`
-4. Edit the file `/etc/sddm.conf` and change the theme in there to `catppuccin-<flavour>`. For example, `catppuccin-mocha`.
+2. Clone this repository locally and enter the cloned folder:
+    ```shell
+    git clone https://github.com/catppuccin/sddm.git && cd sddm
+    ```
+3. Copy all or selected theme(s) from the `themes` folder to
+`/usr/share/sddm/themes/`. E.g. to copy `mocha-red`, use:
+    ```shell
+    sudo cp -r themes/mocha-red/ /usr/share/sddm/themes/
+    ```
+4. Edit the file `/etc/sddm.conf` and change the theme in there to `<flavour>-<accent>`. For example, `mocha-red`.
 
 - If you don't have this file make one with `.conf` extension and make sure it has these two lines within the config:
 
@@ -111,7 +118,6 @@ displayManager.sddm = {
 - `Background`: This is the location of the background image, it is recomended to use the provided `backgrounds/` directory to store the images
 - `LoginBackground`: This is a extra background around the login panel, this should be set to either `true` or `false`
 - `UserIcon`: When this is set to `true` the user icon will be displayed, this should be set to either `true` or `false`
-- `AccentColor`: The color of the login button, this should be the hex code of one of the palette colors
 
 ## 💝 Thanks to
 
