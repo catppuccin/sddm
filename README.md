@@ -66,7 +66,7 @@ pacman -Syu qt6-svg qt6-declarative qt5-quickcontrols2
 ### Debian Based OS
 
 ```bash
-apt install --no-install-recommends qml-module-qtquick-layouts qml-module-qtquick-controls2 libqt6svg6
+apt install --no-install-recommends qml-module-qtquick-layouts qml-module-qtquick-controls2 qml-module-qtquick-window2 libqt6svg6
 ```
 
 ### RPM Based OS
