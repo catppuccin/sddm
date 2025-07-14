@@ -68,7 +68,7 @@ Item {
     }
     Rectangle {
       visible: config.UserIcon == "true" ? true : false
-      width: inputWidth * 0.64 ; height: inputWidth * 0.64
+      width: inputHeight * 5.7 ; height: inputHeight * 5.7
       color: "transparent"
       Image {
         source: Qt.resolvedUrl("../assets/defaultIcon.png")
