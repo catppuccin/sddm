@@ -1,22 +1,23 @@
 _default:
   @just --list
 
-build:
-  #!/usr/bin/env bash 
-  rm -r ./themes
-  for template in $(ls ./templates/*); do
+clean:
+  rm -rf ./themes ./zips
+
+build: clean
+  #!/usr/bin/env bash
+  for template in $(find ./templates -type f -name "*.tera"); do
     whiskers $template
   done
-  for flavor in $(whiskers --list-flavors -o plain ); do
-    for accent in $(whiskers --list-accents -o plain ); do
+  for flavor in $(whiskers --list-flavors -o plain); do
+    for accent in $(whiskers --list-accents -o plain); do
       cp -r ./src/* ./themes/catppuccin-$flavor-$accent/
-      if [ $flavor == "latte" ]; then 
+      if [ $flavor == "latte" ]; then
         cp ./assets/defaultIconLight.png ./themes/catppuccin-$flavor-$accent/assets/defaultIcon.png
       else
-        cp ./assets/defaultIcon.png ./themes/catppuccin-$flavor-$accent/assets/defaultIcon.png 
+        cp ./assets/defaultIcon.png ./themes/catppuccin-$flavor-$accent/assets/defaultIcon.png
       fi
-      # stopgap for previews
-      cp ./perflavor/$flavor.png ./themes/catppuccin-$flavor-$accent/preview.png
+      cp ./assets/$flavor.png ./themes/catppuccin-$flavor-$accent/preview.png
     done
   done
-  
+
