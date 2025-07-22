@@ -1,8 +1,8 @@
 <h3 align="center">
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
-	Catppuccin for <a href="https://github.com/sddm/sddm/">SDDM</a>
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
+ <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
+ <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
+ Catppuccin for <a href="https://github.com/sddm/sddm/">SDDM</a>
+ <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
 <p align="center">
@@ -36,24 +36,22 @@
 
 ## Usage
 
-1. Ensure you have the [dependencies](#dependencies).
-2. Clone this repository and enter the cloned folder:
-    ```shell
-    git clone https://github.com/catppuccin/sddm.git && cd sddm
-    ```
-3. Copy theme(s) of your choice from the `themes` folder to
-`/usr/share/sddm/themes/`. E.g. to copy `catppuccin-mocha-red`, use:
-    ```shell
-    sudo cp -r themes/catppuccin-mocha-red/ /usr/share/sddm/themes/
-    ```
-4. Edit the file `/etc/sddm.conf` and change the theme in there to `catppuccin-<flavour>-<accent>`. For example, `catppuccin-mocha-red`.
+1. Ensure you have installed the [dependencies](#dependencies) for your operating system.
+2. Download your chosen flavour + accent zip file from the [latest GitHub release](https://github.com/catppuccin/sddm/releases/latest).
+3. Unzip the file and move the resulting directory to `/usr/share/sddm/themes/`. E.g. to copy `catppuccin-mocha-mauve`:
 
-- If you don't have this file make one with `.conf` extension and make sure it has these two lines within the config:
+    ```bash
+    sudo mv -v catppuccin-mocha-mauve-sddm /usr/share/sddm/themes/catppuccin-mocha-mauve
+    ```
 
-```
-[Theme]
-Current=catppuccin-flavour
-```
+4. Edit the `/etc/sddm.conf` file and change the theme to `catppuccin-<flavour>-<accent>`. For example, `catppuccin-mocha-mauve`.
+
+   If you don't have this file, create the `/etc/sddm.conf` file and add the following lines:
+
+   ```conf
+   [Theme]
+   Current=catppuccin-flavour
+   ```
 
 ## Dependencies
 
@@ -124,6 +122,7 @@ displayManager.sddm = {
 - [DonutDev](https://github.com/DonutDev)
 - [Isabelinc](https://github.com/Isabelincorp)
 - [Isabel Roses](https://github.com/isabelroses)
+- [a9lim](https://github.com/a9lim)
 
 &nbsp;
 
