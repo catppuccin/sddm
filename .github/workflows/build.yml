@@ -1,0 +1,43 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: extractions/setup-just@v3
+      - uses: catppuccin/setup-whiskers@v2
+
+      - name: Create Archives
+        run: just zip
+
+      - name: Set outputs
+        id: vars
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Upload artifacts (Latte)
+        uses: actions/upload-artifact@v4
+        with:
+          name: 'catppuccin-latte-sddm-${{ steps.vars.outputs.sha_short }}'
+          path: zips/catppuccin-latte-*.zip
+      - name: Upload artifacts (Frappe)
+        uses: actions/upload-artifact@v4
+        with:
+          name: 'catppuccin-frappe-sddm-${{ steps.vars.outputs.sha_short }}'
+          path: zips/catppuccin-frappe-*.zip
+      - name: Upload artifacts (Macchiato)
+        uses: actions/upload-artifact@v4
+        with:
+          name: 'catppuccin-macchiato-sddm-${{ steps.vars.outputs.sha_short }}'
+          path: zips/catppuccin-macchiato-*.zip
+      - name: Upload artifacts (Mocha)
+        uses: actions/upload-artifact@v4
+        with:
+          name: 'catppuccin-mocha-sddm-${{ steps.vars.outputs.sha_short }}'
+          path: zips/catppuccin-mocha-*.zip

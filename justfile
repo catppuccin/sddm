@@ -21,3 +21,11 @@ build: clean
     done
   done
 
+zip: build
+  #!/usr/bin/env bash
+  mkdir -p zips
+  for dir in ./themes/*; do
+    [ -e "$dir/theme.conf" ] || continue
+    theme_name="$(basename "$dir")"
+    (cd "$dir" && zip -r "../../zips/${theme_name}-sddm" .)
+  done
