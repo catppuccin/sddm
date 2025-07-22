@@ -50,7 +50,7 @@
 
    ```conf
    [Theme]
-   Current=catppuccin-flavour
+   Current=catppuccin-mocha-mauve
    ```
 
 ## Dependencies
