@@ -53,6 +53,8 @@
    Current=catppuccin-mocha-mauve
    ```
 
+5. Unfortunately, the theme does not work properly if SDDM is run on X11 and not Wayland - follow the instructions [here](https://wiki.archlinux.org/title/SDDM#Wayland) here if there are issues. 
+
 ## Dependencies
 
 ### Arch Based OS

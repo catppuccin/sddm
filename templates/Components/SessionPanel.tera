@@ -25,9 +25,11 @@ Item {
       highlighted: sessionList.currentIndex == index
       contentItem: Text {
         renderType: Text.NativeRendering
-        font.family: config.Font
-        font.pointSize: config.FontSize
-        font.bold: true
+        font {
+          family: config.Font
+          pointSize: config.FontSize
+          bold: true
+        }
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         color: {{text.hex}}
