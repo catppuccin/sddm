@@ -41,7 +41,7 @@
 3. Unzip the file and move the resulting directory to `/usr/share/sddm/themes/`. E.g. to copy `catppuccin-mocha-mauve`:
 
     ```bash
-    sudo mv -v catppuccin-mocha-mauve-sddm /usr/share/sddm/themes/catppuccin-mocha-mauve
+    sudo mv -v catppuccin-mocha-mauve /usr/share/sddm/themes
     ```
 
 4. Edit the `/etc/sddm.conf` file and change the theme to `catppuccin-<flavour>-<accent>`. For example, `catppuccin-mocha-mauve`.

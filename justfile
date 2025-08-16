@@ -27,5 +27,5 @@ zip: build
   for dir in ./themes/*; do
     [ -e "$dir/theme.conf" ] || continue
     theme_name="$(basename "$dir")"
-    (cd "$dir" && zip -r "../../zips/${theme_name}-sddm" .)
+    (cd themes && zip -r "../zips/${theme_name}-sddm" "${theme_name}")
   done
