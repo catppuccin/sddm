@@ -91,6 +91,7 @@ Add the package to systemPackages, you can customize the theme by overriding the
 environment.systemPackages = [(
   pkgs.catppuccin-sddm.override {
     flavor = "mocha";
+    accent = "mauve";
     font  = "Noto Sans";
     fontSize = "9";
     background = "${./wallpaper.png}";
@@ -99,12 +100,12 @@ environment.systemPackages = [(
 )];
 ```
 
-Then set it as the theme in the sddm configuration, change the suffix to the flavor you set in the package override:
+Then set it as the theme in the sddm configuration, change the suffix to the flavor and accent you set in the package override:
 
 ```nix
 displayManager.sddm = {
   enable = true;
-  theme = "catppuccin-mocha";
+  theme = "catppuccin-mocha-mauve";
   package = pkgs.kdePackages.sddm;
 };
 ```
