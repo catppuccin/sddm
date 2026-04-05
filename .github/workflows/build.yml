@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: extractions/setup-just@v3
+      - uses: extractions/setup-just@v4
       - uses: catppuccin/setup-whiskers@v2
 
       - name: Create Archives
