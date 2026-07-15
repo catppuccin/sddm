@@ -11,6 +11,7 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
 import "../assets"
+import ".." as Theme
 
 Item {
   property var user: userField.text
@@ -28,7 +29,7 @@ Item {
     width: inputWidth * 1.2
     radius: 5
     visible: config.LoginBackground == "true" ? true : false
-    color: {{mantle.hex}}
+    color: Theme.Colors.panelBackground
   }
   Column {
     spacing: 8
@@ -122,12 +123,12 @@ Item {
         }
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        color: {{crust.hex}}
+        color: Theme.Colors.textOnAccent
         text: "Login"
       }
       background: Rectangle {
         id: buttonBackground
-        color: {{flavor.colors[accent].hex}}
+        color: Theme.Colors.primaryButtonBackground
         radius: 3
       }
       states: [
@@ -136,7 +137,7 @@ Item {
           when: loginButton.down
           PropertyChanges {
             target: buttonBackground
-            color: {{subtext0.hex}}
+            color: Theme.Colors.primaryButtonBackgroundHover
           }
           PropertyChanges {
             target: buttonText
@@ -147,7 +148,7 @@ Item {
           when: loginButton.hovered
           PropertyChanges {
             target: buttonBackground
-            color: {{subtext0.hex}}
+            color: Theme.Colors.primaryButtonBackgroundHover
           }
           PropertyChanges {
             target: buttonText

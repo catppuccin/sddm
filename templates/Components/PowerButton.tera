@@ -9,6 +9,7 @@ whiskers:
 ---
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import ".." as Theme
 
 Item {
   implicitHeight: powerButton.height
@@ -22,12 +23,12 @@ Item {
       source: Qt.resolvedUrl("../icons/power.svg")
       height: height
       width: width
-      color: {{crust.hex}}
+      color: Theme.Colors.textOnAccent
     }
     background: Rectangle {
       id: powerButtonBackground
       radius: 3
-      color: {{red.hex}}
+      color: Theme.Colors.dangerButtonBackground
     }
     states: [
       State {
@@ -35,7 +36,7 @@ Item {
         when: powerButton.hovered
         PropertyChanges {
           target: powerButtonBackground
-          color: {{rosewater.hex}}
+          color: Theme.Colors.dangerButtonBackgroundHover
         }
       }
     ]

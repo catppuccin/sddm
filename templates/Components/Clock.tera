@@ -9,10 +9,11 @@ whiskers:
 ---
 import QtQuick 2.15
 import SddmComponents 2.0
+import ".." as Theme
 
 Clock {
   id: time
-  color: {{text.hex}}
+  color: Theme.Colors.textPrimary
   timeFont.family: config.Font
   dateFont.family: config.Font
   anchors {

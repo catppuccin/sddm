@@ -9,6 +9,7 @@ whiskers:
 ---
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import ".." as Theme
 
 Item {
   implicitHeight: sleepButton.height
@@ -22,11 +23,11 @@ Item {
       source: Qt.resolvedUrl("../icons/sleep.svg")
       height: height
       width: width
-      color: {{crust.hex}}
+      color: Theme.Colors.textOnAccent
     }
     background: Rectangle {
       id: sleepButtonBg
-      color: {{red.hex}}
+      color: Theme.Colors.dangerButtonBackground
       radius: 3
     }
     states: [
@@ -35,7 +36,7 @@ Item {
         when: sleepButton.hovered
         PropertyChanges {
           target: sleepButtonBg
-          color: {{rosewater.hex}}
+          color: Theme.Colors.dangerButtonBackgroundHover
         }
       }
     ]
