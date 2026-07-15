@@ -9,6 +9,7 @@ whiskers:
 ---
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import ".." as Theme
 
 TextField {
   id: userField
@@ -16,20 +17,20 @@ TextField {
   width: inputWidth
   selectByMouse: true
   echoMode: TextInput.Normal
-  selectionColor: {{overlay0.hex}}
+  selectionColor: Theme.Colors.selectionColor
   renderType: Text.NativeRendering
   font {
     family: config.Font
     pointSize: config.FontSize
     bold: true
   }
-  color: {{text.hex}}
+  color: Theme.Colors.textPrimary
   horizontalAlignment: Text.AlignHCenter
   placeholderText: "Username"
   text: userModel.lastUser
   background: Rectangle {
     id: userFieldBackground
-    color: {{surface0.hex}}
+    color: Theme.Colors.surfaceBase
     radius: 3
   }
   states: [
@@ -38,7 +39,7 @@ TextField {
       when: userField.activeFocus
       PropertyChanges {
         target: userFieldBackground
-        color: {{surface1.hex}}
+        color: Theme.Colors.surfaceHover
       }
     },
     State {
@@ -46,7 +47,7 @@ TextField {
       when: userField.hovered
       PropertyChanges {
         target: userFieldBackground
-        color: {{surface1.hex}}
+        color: Theme.Colors.surfaceHover
       }
     }
   ]

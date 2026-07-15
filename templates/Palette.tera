@@ -1,0 +1,50 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+    - accent
+  hex_format: "\"#{{R}}{{G}}{{B}}{{Z}}\""
+  filename: "./themes/catppuccin-{{flavor.identifier}}-{{accent}}/Palette.qml"
+---
+pragma Singleton
+import QtQuick 2.15
+
+QtObject {
+  // the accent selected for this theme build (e.g. yellow, mauve, ...)
+  readonly property color accent: {{flavor.colors[accent].hex}}
+
+  // base tones
+  readonly property color rosewater: {{rosewater.hex}}
+  readonly property color flamingo: {{flamingo.hex}}
+  readonly property color pink: {{pink.hex}}
+  readonly property color mauve: {{mauve.hex}}
+  readonly property color red: {{red.hex}}
+  readonly property color maroon: {{maroon.hex}}
+  readonly property color peach: {{peach.hex}}
+  readonly property color yellow: {{yellow.hex}}
+  readonly property color green: {{green.hex}}
+  readonly property color teal: {{teal.hex}}
+  readonly property color sky: {{sky.hex}}
+  readonly property color sapphire: {{sapphire.hex}}
+  readonly property color blue: {{blue.hex}}
+  readonly property color lavender: {{lavender.hex}}
+
+  // text tones
+  readonly property color text: {{text.hex}}
+  readonly property color subtext1: {{subtext1.hex}}
+  readonly property color subtext0: {{subtext0.hex}}
+
+  // surface tones
+  readonly property color overlay2: {{overlay2.hex}}
+  readonly property color overlay1: {{overlay1.hex}}
+  readonly property color overlay0: {{overlay0.hex}}
+  readonly property color surface2: {{surface2.hex}}
+  readonly property color surface1: {{surface1.hex}}
+  readonly property color surface0: {{surface0.hex}}
+
+  // base tones
+  readonly property color base: {{base.hex}}
+  readonly property color mantle: {{mantle.hex}}
+  readonly property color crust: {{crust.hex}}
+}

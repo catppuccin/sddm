@@ -10,6 +10,7 @@ whiskers:
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQml.Models 2.15
+import ".." as Theme
 
 Item {
   property var session: sessionList.currentIndex
@@ -32,12 +33,12 @@ Item {
         }
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        color: {{text.hex}}
+        color: Theme.Colors.textPrimary
         text: name
       }
       background: Rectangle {
         id: sessionEntryBackground
-        color: {{surface1.hex}}
+        color: Theme.Colors.surfaceHover
         radius: 3
       }
       states: [
@@ -46,7 +47,7 @@ Item {
           when: sessionEntry.hovered
           PropertyChanges {
             target: sessionEntryBackground
-            color: {{surface2.hex}}
+            color: Theme.Colors.surfaceActive
           }
         }
       ]
@@ -74,11 +75,11 @@ Item {
       source: Qt.resolvedUrl("../icons/settings.svg")
       height: height
       width: width
-      color: {{text.hex}}
+      color: Theme.Colors.textPrimary
     }
     background: Rectangle {
       id: sessionButtonBackground
-      color: {{surface0.hex}}
+      color: Theme.Colors.surfaceBase
       radius: 3
     }
     states: [
@@ -87,7 +88,7 @@ Item {
         when: sessionButton.down
         PropertyChanges {
           target: sessionButtonBackground
-          color: {{surface1.hex}}
+          color: Theme.Colors.surfaceHover
         }
       },
       State {
@@ -95,7 +96,7 @@ Item {
         when: sessionButton.hovered
         PropertyChanges {
           target: sessionButtonBackground
-          color: {{surface2.hex}}
+          color: Theme.Colors.surfaceActive
         }
       },
       State {
@@ -103,7 +104,7 @@ Item {
         when: sessionPopup.visible
         PropertyChanges {
           target: sessionButtonBackground
-          color: {{surface2.hex}}
+          color: Theme.Colors.surfaceActive
         }
       }
     ]
@@ -126,7 +127,7 @@ Item {
     padding: inputHeight / 10
     background: Rectangle {
       radius: 5.4
-      color: {{surface0.hex}}
+      color: Theme.Colors.surfaceBase
     }
     contentItem: ListView {
       id: sessionList

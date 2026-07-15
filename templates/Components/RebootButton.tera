@@ -9,6 +9,7 @@ whiskers:
 ---
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import ".." as Theme
 
 Item {
   implicitHeight: rebootButton.height
@@ -22,12 +23,12 @@ Item {
       source: Qt.resolvedUrl("../icons/reboot.svg")
       height: height
       width: width
-      color: {{crust.hex}}
+      color: Theme.Colors.textOnAccent
     }
     background: Rectangle {
       id: rebootButtonBackground
       radius: 3
-      color: {{red.hex}}
+      color: Theme.Colors.dangerButtonBackground
     }
     states: [
       State {
@@ -35,7 +36,7 @@ Item {
         when: rebootButton.hovered
         PropertyChanges {
           target: rebootButtonBackground
-          color: {{rosewater.hex}}
+          color: Theme.Colors.dangerButtonBackgroundHover
         }
       }
     ]

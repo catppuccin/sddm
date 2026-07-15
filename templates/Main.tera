@@ -22,7 +22,7 @@ Item {
     height: parent.height
     width: parent.width
     z: 0
-    color: {{base.hex}}
+    color: Colors.windowBackground
   }
   Image {
     id: backgroundImage
