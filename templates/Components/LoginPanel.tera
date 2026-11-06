@@ -71,16 +71,20 @@ Item {
       width: inputHeight * 5.7 ; height: inputHeight * 5.7
       color: "transparent"
       Image {
-        source: Qt.resolvedUrl("../assets/defaultIcon.png")
-        height: parent.width
-        width: parent.width
-      }
-      Image {
-        // common icon path for KDE and GNOME
-        source: Qt.resolvedUrl("/var/lib/AccountsService/icons/" + user)
-        height: parent.width
-        width: parent.width
-      }
+       id: defaultAvatar
+       source: Qt.resolvedUrl("../assets/defaultIcon.png")
+       // Only show the placeholder when the user's icon isn't available
+       visible: userAvatar.status !== Image.Ready
+       height: parent.width
+       width: parent.width
+     }
+     Image {
+       id: userAvatar
+       // common icon path for KDE and GNOME
+       source: Qt.resolvedUrl("/var/lib/AccountsService/icons/" + user)
+       height: parent.width
+       width: parent.width
+     }
       Image {
         source: Qt.resolvedUrl(config.LoginBackground == "true" ? "../assets/maskDark.svg" : "../assets/mask.svg")
         height: parent.width
